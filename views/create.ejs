@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create account</title>
+</head>
+<body>
+    <h2>Create your Account</h2>
+    <form action="/user" method="post">
+        <label for="userId">
+            Enter Id:
+            <input placeholder="User_id" name="id" type="text" id="userId" required> <br><br>
+        </label>
+
+        <label for="userName">
+            Enter Name:
+            <input placeholder="User_name" name="username" id="userName" type="text" required><br><br>
+        </label>
+
+        <label for="email">
+            Email id: 
+            <input placeholder="Email_id" id="email" name="email" type="text" required><br><br>
+        </label>
+
+        <label for="pwd">
+            Enter Password:
+            <input placeholder="Enter password" name="password" type="password" id="pwd" required><br><br>
+        </label>
+
+        <label for="confirm_pwd">
+            Confirm Password:
+            <input placeholder="Confirm password" name="confirmPwd" type="password" id="confirm_pwd" required><br><br>
+        </label>
+        
+        <button>Submit data</button>
+    </form>
+    <script>
+        function validateForm() {
+            var password = document.getElementById("pwd").value;
+            var confirmPassword = document.getElementById("confirm_pwd").value;
+
+            if (password != confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete account</title>
+</head>
+<body>
+    <h3>Verification process</h3>
+    <form action="/user/<%= id %>?_method=DELETE" method="post">
+        <label for="email">
+            Email id: 
+            <input placeholder="Email_id" id="email" name="email" type="text" required><br><br>
+        </label>
+    
+        <label for="pwd">
+            Enter Password:
+            <input placeholder="Enter password" name="password" type="password" id="pwd" required><br><br>
+        </label>
+    
+        <button>Proceed</button>
+    </form>
+</body>
+</html>

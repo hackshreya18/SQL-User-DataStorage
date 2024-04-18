@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show information</title>
+    <style>
+        table,tr,td{
+            border: 1px solid black;
+            padding: 3px 5px;
+            border-collapse: collapse;
+        }
+        a{
+            text-decoration: none;
+        }
+        table{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        @media screen and (max-width: 700px) {
+            .email {
+                display: none;
+            }
+        }
+        @media screen and (max-width: 500px) {
+            .email,.id {
+                display: none;
+            }
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h2 style="text-align: center;">All Existing Users</h2>
+    <form style="text-align: center;" action="/user/create" method="GET">
+        <button >Create your account</button>
+    </form>
+    <br><br>
+    <table style="overflow-x:auto;" >
+        <tr>
+            <th class="sn">S.No.</th>
+            <th class="id">Id</th>
+            <th class="username">Username</th>
+            <th class="email">Email</th>
+            
+        </tr>
+        <% i=1 %>
+            <% for(user of result){ %>
+            <tr>
+                <td><%= i++ %></td>
+                <td class="id"><%= user.id %></td>
+                <td class="username"><%= user.username %></td>
+                <td class="email"><%= user.email %></td>
+                <td><button><a href="/user/<%= user.id %>/edit">Edit</a></button></td>
+                <td>
+                    <form action="/user/delete/<%= user.id %>" method="GET">
+                        <button>Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% } %>
+        
+    </table>   
+</body>
+</html>
+
